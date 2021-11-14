@@ -1,0 +1,43 @@
+version: '3.8'
+
+x-node: &x-node
+  build: .
+  volumes:
+    - ./config:/src/config
+  environment:
+    - DEPLOYMENT=docker-compose
+    - USER=${USER}
+
+services:
+  database:
+    image: bitnami/mariadb:10.5
+    ports:
+      - 127.0.0.1:3306:3306
+    volumes:
+      - database:/bitnami/mariadb
+      # - ./corsaceInit.sql:/docker-entrypoint-initdb.d/corsaceInit.sql
+    environment:
+      - MARIADB_DATABASE=pp
+      - MARIADB_USER=pp
+      - MARIADB_PASSWORD=pp
+      - MARIADB_ROOT_PASSWORD=changeme
+      # - BITNAMI_DEBUG=true
+  phpmyadmin:
+    image: phpmyadmin
+    ports:
+      - 127.0.0.1:3380:80
+    environment:
+      - PMA_HOST=pp
+      - PMA_USER=pp
+      - PMA_PASSWORD=pp
+  api:
+    <<: *x-node
+    ports:
+      - 127.0.0.1:8080:8080
+    command: "api"
+  migrator:
+    <<: *x-node
+    command: "typeorm migration:run"
+
+volumes:
+  database:

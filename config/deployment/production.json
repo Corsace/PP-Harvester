@@ -1,0 +1,70 @@
+{
+    "database": {
+        "host": "@@DB_URL",
+        "port": 3306,
+        "database": "pp",
+        "username": "pp",
+        "password": "pp"
+    },
+    "discord": {
+        "roles": {
+            "pp": "802395701023735808",
+            "onion": "577267917662715904",
+            "verified": "909555235834441758",
+            "ranks": {
+                "osu": {
+                    "dig1": "909540204719800390",
+                    "dig2": "909550783987609651",
+                    "dig3": "909550818317971588",
+                    "dig4": "909550845895524404",
+                    "dig5": "909550868876120165"
+                },
+                "taiko": {
+                    "dig1": "909550895681916958",
+                    "dig2": "909550922391253033",
+                    "dig3": "909550969354879068",
+                    "dig4": "909550994952716288",
+                    "dig5": "909551014175195147"
+                },
+                "catch": {
+                    "dig1": "909551039190036582",
+                    "dig2": "909551055455526932",
+                    "dig3": "909551073142906921",
+                    "dig4": "909551096672972840",
+                    "dig5": "909551112997187645"
+                },
+                "mania": {
+                    "dig1": "909551203497701467",
+                    "dig2": "909551238905987162",
+                    "dig3": "909551270266826852",
+                    "dig4": "909551300402884628",
+                    "dig5": "909551320120320120"
+                }
+            }
+        },
+        "token": "@@DISCORD_TOKEN",
+        "guild": "546120878908506119",
+        "clientId": "",
+        "clientSecret": "@@DISCORD_CLIENTSECRET",
+        "invite": "aqPCnXu",
+        "logChannel": "673300950563160073",
+        "applicationChannel": "802399813470650388",
+        "applicationArchiveChannel": "906317823079493632"
+    },
+    "osu": {
+        "v1": {
+            "apiKey": "@@OSU_V1_APIKEY"
+        },
+        "v2": {
+            "clientId": "@@OSU_V2_CLIENTID",
+            "clientSecret": "@@OSU_V2_CLIENTSECRET"
+        }
+    },
+    "koaKeys": ["@@KOA_KEY"],
+    "cookiesDomain": "corsace.io",
+    "api": {
+        "host": "0.0.0.0",
+        "port": 80,
+        "publicUrl": "@@API_PUBLICURL"
+    }
+}
